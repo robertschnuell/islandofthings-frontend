@@ -6,6 +6,7 @@ import AddUser from './components/AddUser'
 import ChangePassword from './components/ChangePassword'
 import DeleteUser from './components/DeleteUser'
 import { useTranslation, Trans } from 'react-i18next'
+import CreatePublicRoom from './components/CreatePublicRoom'
 
 // import { useAuth } from '../../Auth'
 
@@ -37,6 +38,8 @@ const Admin = () => {
         return <ChangePassword />
       case 'delete':
         return <DeleteUser />
+        case 'create':
+          return <CreatePublicRoom />
       default:
         return <AddUser matrixClient={matrixClient} />
     }
@@ -54,6 +57,8 @@ const Admin = () => {
         <input type="radio" id="change-password" name={t('Reset Password')} value="change-password" checked={selection === 'password'} onChange={() => setSelection('password')} />
         <label htmlFor="change-password">{t('Reset Password')}</label>
           <input type="radio" id="delete-user" name={t('Delete user')} value="delete-user" checked={selection === 'delete'} onChange={() => setSelection('delete')} />
+          <label htmlFor="delete-user">{t('Delete user')}</label>
+          <input type="radio" id="delete-user" name={t('Create public room')} value="delete-user" checked={selection === 'delete'} onChange={() => setSelection('delete')} />
         <label htmlFor="delete-user">{t('Delete user')}</label>
       </div>
       </section>
