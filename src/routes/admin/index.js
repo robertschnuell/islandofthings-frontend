@@ -38,8 +38,8 @@ const Admin = () => {
         return <ChangePassword />
       case 'delete':
         return <DeleteUser />
-        case 'create':
-          return <CreatePublicRoom />
+      case 'create':
+        return <CreatePublicRoom />
       default:
         return <AddUser matrixClient={matrixClient} />
     }
