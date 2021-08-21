@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header>
-      <Link to={auth.user ? '/dashboard' : '/'}><h1>medienhaus/</h1></Link>
+      <Link to={auth.user ? '/dashboard' : '/'}><h1>grid.valentinswerder</h1></Link>
     </header>
   )
 }
