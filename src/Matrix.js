@@ -1,4 +1,5 @@
 import matrixcs, { MemoryStore } from 'matrix-js-sdk'
+import i18n from 'i18next'
 
 class Matrix {
   constructor () {
