@@ -12,5 +12,6 @@
   "Successfully deleted user ": "Der folgende Benutzer wurde erfolgreich gelöscht: ",
   "User was successfully created.": "Benutzeraccount wurde erfolgreich angelegt.",
   "Create public room": "Öffentlichen Raum anlegen",
-  "What is this room about": "Was ist das Thema des Raums"
+  "What is this room about": "Was ist das Thema des Raums",
+  "create": "Einen <1>öffentlichen</1> Raum anlegen"
 }

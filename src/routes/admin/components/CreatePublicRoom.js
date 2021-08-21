@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Loading } from '../../../components/loading'
 import { useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 
 // import { useTranslation, Trans } from 'react-i18next';
 
@@ -9,19 +9,19 @@ const CreatePublicRoom = ({ matrixClient }) => {
   const [loading, setLoading] = useState(false)
   const [roomName, setRoomName] = useState('')
   const [topic, setTopic] = useState('')
-  const [userid, setUserid] = useState([])
-  const [newRoom, setNewRoom] = useState('')
-  const [radio, setRadio] = useState(true)
+  // const [userid, setUserid] = useState([])
+  // const [newRoom, setNewRoom] = useState('')
+  // const [radio, setRadio] = useState(true)
   const { register, handleSubmit, errors } = useForm()
   const { t } = useTranslation('admin')
 
   const changeName = e => setRoomName(e.target.value)
   const changeTopic = e => setTopic(e.target.value)
-  const changeUser = e => setUserid(e.target.value)
+  // const changeUser = e => setUserid(e.target.value)
 
   const createPublicRoom = async () => {
     const moderator = []
-    moderator.push(userid)
+    // moderator.push(userid)
     setLoading(true)
     const opts = {
       room_alias_name: roomName,
@@ -33,14 +33,13 @@ const CreatePublicRoom = ({ matrixClient }) => {
     console.log(roomName, topic, opts)
     try {
       await matrixClient.createRoom(opts)
-        .then((response) => {
-          setNewRoom(response.room_id)
-        })
     } catch (e) {
-      alert(e.data.error)
+      console.log(e.data.error)
+    } finally {
       setLoading(false)
     }
   }
+  /*
   useEffect(() => {
     // don't know why but react had problems with daisychained ternary conditionals
     if (newRoom !== '') {
@@ -55,7 +54,6 @@ const CreatePublicRoom = ({ matrixClient }) => {
     setLoading(false)
     // eslint-disable-next-line
   }, [newRoom]);
-
   useEffect(() => {
     console.log(radio)
   }, [radio])
@@ -69,29 +67,34 @@ const CreatePublicRoom = ({ matrixClient }) => {
     setUserid('')
     setLoading(false)
   }
+*/
 
   return (
-      <section className="create-room">
-        <h2>Create a <u>public</u> room</h2>
-        <form onSubmit={handleSubmit(createPublicRoom)}>
+    <section className="create-room">
+      <h2><Trans t={t} i18nKey="create">Create a <u>public</u> room</Trans></h2>
+      <form onSubmit={handleSubmit(createPublicRoom)}>
+        <div>
           <label htmlFor="name">Name</label>
-        <input name="roomName" type="text" placeholder="public_room" value={roomName} onChange={changeName} ref={register({ required: true })} />
+          <input name="roomName" type="text" placeholder="public_room" value={roomName} onChange={changeName} ref={register({ required: true })} />
           {errors.roomName && "can't be empty"}
-
-          <label htmlFor="roomTopic">topic</label>
+        </div>
+        <div>
+          <label htmlFor="roomTopic">Topic</label>
           <textarea name="roomTopic" type="text" rows="3" spellCheck="true" placeholder={t('What is this room about') + '?'} value={topic} onChange={changeTopic} />
+        </div>
+        {/* }
           <label htmlFor="moderator">Moderator</label>
-          <input name="moderator" type="text" placeholder="userid" value={userid} onChange={changeUser} ref={register({ required: true })} />
-          {errors.moderator && "can't be empty"}
-          <label htmlFor="moderatorRadio">Moderator</label>
-          <input type="radio" id="mod" name="modYes" checked={radio === true} onChange={() => setRadio(true)} />
-          <label htmlFor="room">Yes</label>
-          <input type="radio" id="mod" name="modNo" checked={radio === false} onChange={() => setRadio(false)} />
-          <label htmlFor="account">No</label>
+        <input name="moderator" type="text" placeholder="userid" value={userid} onChange={changeUser} ref={register({ required: true })} />
+        {errors.moderator && "can't be empty"}
+        <label htmlFor="moderatorRadio">Moderator</label>
+        <input type="radio" id="mod" name="modYes" checked={radio === true} onChange={() => setRadio(true)} />
+        <label htmlFor="room">Yes</label>
+        <input type="radio" id="mod" name="modNo" checked={radio === false} onChange={() => setRadio(false)} />
+        <label htmlFor="account">No</label>
+  */}
+        <button type="submit" name="createRoom">{loading ? <Loading /> : t('SUBMIT')}</button>
 
-          <button type="submit" name="createRoom">{loading ? <Loading /> : t('SUBMIT')}</button>
-
-        </form>
+      </form>
     </section>
   )
 }
