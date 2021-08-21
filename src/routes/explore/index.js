@@ -7,8 +7,6 @@ import * as matrixcs from "matrix-js-sdk";
 import { useTranslation } from 'react-i18next';
 import Matrix from "../../Matrix"
 
-const myUserId = localStorage.getItem("mx_user_id");
-const myAccessToken = localStorage.getItem("mx_access_token");
 
 
 const Explore = () => {
