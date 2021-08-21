@@ -58,8 +58,8 @@ const Admin = () => {
         <label htmlFor="change-password">{t('Reset Password')}</label>
           <input type="radio" id="delete-user" name={t('Delete user')} value="delete-user" checked={selection === 'delete'} onChange={() => setSelection('delete')} />
           <label htmlFor="delete-user">{t('Delete user')}</label>
-          <input type="radio" id="delete-user" name={t('Create public room')} value="delete-user" checked={selection === 'delete'} onChange={() => setSelection('delete')} />
-        <label htmlFor="delete-user">{t('Delete user')}</label>
+          <input type="radio" id="create-room" name={t('Create public room')} value="create-room" checked={selection === 'create'} onChange={() => setSelection('create')} />
+        <label htmlFor="create-room">{t('Delete user')}</label>
       </div>
       </section>
       {renderSelection()}

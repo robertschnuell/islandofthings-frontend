@@ -11,5 +11,6 @@
   "passChange": "Passwort wurde erfolgreich zurückgesetzt.",
   "Successfully deleted user ": "Der folgende Benutzer wurde erfolgreich gelöscht: ",
   "User was successfully created.": "Benutzeraccount wurde erfolgreich angelegt.",
-  "Create public room": "Öffentlichen Raum anlegen"
+  "Create public room": "Öffentlichen Raum anlegen",
+  "What is this room about": "Was ist das Thema des Raums"
 }
