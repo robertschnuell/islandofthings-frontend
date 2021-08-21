@@ -9,6 +9,7 @@ const CreatePublicRoom = ({ matrixClient }) => {
   const [loading, setLoading] = useState(false)
   const [roomName, setRoomName] = useState('')
   const [topic, setTopic] = useState('')
+  const [feedback, setFeedback] = useState('')
   // const [userid, setUserid] = useState([])
   // const [newRoom, setNewRoom] = useState('')
   // const [radio, setRadio] = useState(true)
@@ -33,8 +34,16 @@ const CreatePublicRoom = ({ matrixClient }) => {
     console.log(roomName, topic, opts)
     try {
       await matrixClient.createRoom(opts)
+        .then(res => {
+          if ('room_id' in res) {
+            setFeedback(t('Room was successfully created.'))
+            setRoomName('')
+            setTopic('')
+          }
+        })
     } catch (e) {
-      console.log(e.data.error)
+      console.log(e)
+      setFeedback(t('The following error occurred: '))
     } finally {
       setLoading(false)
     }
@@ -95,6 +104,7 @@ const CreatePublicRoom = ({ matrixClient }) => {
         <button type="submit" name="createRoom">{loading ? <Loading /> : t('SUBMIT')}</button>
 
       </form>
+      {feedback && <p>{feedback}</p>}
     </section>
   )
 }
