@@ -38,6 +38,7 @@ class Matrix {
       localStorage.setItem('mx_hs_url', response.well_known['m.homeserver'].base_url)
       localStorage.setItem('mx_user_id', response.user_id)
       localStorage.setItem('mx_device_id', response.device_id)
+      i18n.changeLanguage('de')
     }).catch((error) => {
       throw error
     })
