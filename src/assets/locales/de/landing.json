@@ -1,11 +1,11 @@
 {
-  "definition": "<0>classroom, n.</0> — gemeinsamer Raum zum <2>Kommunizieren</2>, <4>Treffen</4>, <6>Präsentieren</6> und zusammen <8>Lernen</8>.",
-  "introduction": "Das <0>Medienhaus</0> ist der Standort für Gestaltung, Kunst und Medien der Universität der Künste Berlin; es ist ein experimenteller Spielplatz, der von den Studiengängen Visuelle Kommunikation, Kunst und Medien sowie Kommunikation in sozialen und wirtschaftlichen Kontexten bespielt wird.",
-  "intro1": "Durch die COVID-19-Pandemie ausgelöst, mussten wir schnell eine intuitive Plattform für die Remote-Zusammenarbeit bereitstellen, die die Anforderungen und Bedürfnisse einer Kunstschule während dieser Krise und darüber hinaus erfüllt.",
-  "intro2": "Wir haben schnell Prototypen erstellt und iterativ einen datenschutzorientierten, kostenlosen und Open-Source orienterten Satz von Tools und Diensten für unsere Studenten und Mitarbeiter erstellt und verbessert. Um es auszuprobieren melde dich einfach mit deinem UdK-Konto an.",
-  "shoutout": "Wir haben <1>medienhaus/</1> entwickelt, nicht um etwa den namensgebenden physischen Raum zu ersetzen, sondern digital zu erweitern.",
-  "classroom": "<0>/classroom</0> für angeregten verbalen Austausch",
-  "meet": "<0>/meet</0> Audio-/Video-Konferenzen und Präsentationen",
+  "definition": "<0>grid.valentinswerder</0> — gemeinsamer Raum zum <2>Kommunizieren</2><4></4>, <6></6> <8></8>.",
+  "introduction": "",
+  "intro1": "",
+  "intro2": "",
+  "shoutout": "",
+  "classroom": "<0>/app</0> für angeregten verbalen Austausch",
+  "meet": "<0> </0> ",
   "write": "<0>/write</0> kollaboratives Schreiben, Lesen und Bearbeiten",
-  "stream": "<0>/stream</0> Audio-/Video-Live-Streaming und Wiedergabe"
+  "stream": "<0></0>"
 }
